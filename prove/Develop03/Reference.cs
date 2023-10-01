@@ -18,4 +18,4 @@ public class Reference
 //begotten Son, that whosoever believeth in him should not perish, but have heverlasting life.
 
 // Proverbs 3:5-6 5  Trust in the Lord with all thine heart; and lean not unto thine own understanding.
-//6 In all thy ways acknowledge him, and he shall direct thy paths.
+//6 In  all thy ways acknowledge him, and he shall direct thy paths.
