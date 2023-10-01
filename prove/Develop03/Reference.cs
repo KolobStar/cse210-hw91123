@@ -14,7 +14,7 @@ public class Reference
 
 
 
-//John 3:16 ¶ For a God so loved the world, that he gave his only 
+//John 3:16 ¶ For a God so loved the world, that he gave his only
 //begotten Son, that whosoever believeth in him should not perish, but have heverlasting life.
 
 // Proverbs 3:5-6 5  Trust in the Lord with all thine heart; and lean not unto thine own understanding.
