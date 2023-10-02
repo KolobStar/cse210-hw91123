@@ -9,11 +9,19 @@ class Program
     static string endpoint = "https://api.scripture.api.bible/v1";
     static void Main(string[] args)
     {
+        Random random = new Random();
         HttpClient client = new HttpClient();
+        client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
         Console.WriteLine("Scripture memorized");
-        var test = request(client, endpoint + $"/bibles/{bibleId}/books");
-        Console.WriteLine(test.Result);
-        Book book = JsonConvert.DeserializeObject<Book>(test.Result);
+        var bookrequest = request(client, endpoint + $"/bibles/{bibleId}/books");
+        //Console.WriteLine(test.Result);
+        JSONBookData books = JsonSerializer.Deserialize<JSONBookData>(bookrequest.Result);
+        int bookindex = random.Next(books.data.Length);
+        var chapterrequest = request(client, endpoint + $"/bibles/{bibleId}/books/{books.data[bookindex]}/chapters");
+        JSONChapterdata chapters = JsonSerializer.Deserialize<JSONChapterdata>(chapterrequest.Result);
+        int chapeterindex = random.Next(chapters.data.Length);
+        var Versesrequest = request(client, endpoint + $"/bibles/{bibleId}/chapters/{chapters.data[chapeterindex]}");
+        JSONVersesdata Verses = JsonSerializer.Deserialize<JSONVersesdata>(Versesrequest.Result);
         Console.ReadLine();
     }
 
@@ -40,6 +48,6 @@ class Program
         */
         return message;
     }
-} 
+}
 
 //not complete
