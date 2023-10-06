@@ -1,45 +1,36 @@
 //Gloria Estrella
-//this file contains all the esntries
 
 using System;
 
 
-    class BreatingActivity : Activity
+class BreathingActivity : Activity
+{
+
+    public BreathingActivity()
     {
-        public List<Activity> entries;
-
-        public BreatingActivity()
-        {
-            entries = new List<Activity>();//creates a list of entries
-        }
-
-        public void Run()
-        {
-
-        }
-
-    // clear the entries
-        public void Clear()
-        {
-            entries.Clear();//this clear the lists
-        }
-
-        // public void Write(string prompt, string response)
-        // {
-        // Activity activity = new Activity();  
-        // activity.Write(prompt,response);
-        // entries.Add(activity);
-        // }
-
-        public void Write(string prompt, string response, DateTime date)
-        {
-        Activity activity = new Activity(date);  
-        activity.Write(prompt,response);
-        entries.Add(activity);
-        }
-
-        public string Read(int index)
-        {
-            return entries[index].Read();//this one outputs the entries
-        }
+        _name = "Breathing Activity ";
+        _description = "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.";
     }
+
+    public void Run()
+    {
+        DisplayStartingMessage();
+        ShowSpinner(5);
+
+        int i = 0;
+        do
+        {
+            Console.Write("Breathe in... ");
+            ShowCountDown(4);
+            Console.Write("Breathe out... ");
+            ShowCountDown(6);
+            i += 4;
+        } while (i < _duration);
+
+        DisplayEndingMessage();
+
+
+    }
+
+
+}

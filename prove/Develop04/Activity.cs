@@ -1,20 +1,17 @@
 //Gloria Estrella
-//This file contains the data of the entries 
+//Main Class 
 using System;
 using System.Security.Cryptography.X509Certificates;
 
 public class Activity
 {
-    public string prompt;
-    public string response;
-    public DateTime date;
     public string _name;
     public string _description;
     public int _duration;
 
     public Activity()
     {
-        this.date = DateTime.Now;// thisone stores the date when is created
+
     }
 
     public void DisplayStartingMessage()
@@ -29,45 +26,47 @@ public class Activity
 
     public void ShowSpinner(int seconds)//prep work for now  we are showing the time in milliseconds
     {
-        Console.WriteLine(seconds * 100);
-        Thread.Sleep(seconds * 100);
+        List<string> animationTimerStrings = new List<string>(); //This a 8 seconds animation timer
+        animationTimerStrings.Add("|");
+        animationTimerStrings.Add("/");//Why 8 secods? because each string in the list last 1 second.
+        animationTimerStrings.Add("-");
+        animationTimerStrings.Add("\\"); //To avoid the ((\) backslash) error you have to add anothern, so you mus have 2 (\\).
+        animationTimerStrings.Add("|");
+        animationTimerStrings.Add("/");
+        animationTimerStrings.Add("-");
+        animationTimerStrings.Add("\\");
+
+        int i = 0;
+        do
+        {
+
+
+            foreach (string s in animationTimerStrings) //this helps the animation timer run
+            {
+                Console.Write(s);
+                Thread.Sleep(125);
+                Console.Write("\b \b");
+
+            }
+            i++;// it adds one to i every time it loops back aroun to the i
+        } while (i <= seconds);
     }
 
     public void ShowCountDown(int seconds)//prep work we are decremanting the seconds and printing each number on the scring
     {
 
 
-        int milliseconds = seconds * 100;
-
         do
         {
-            Console.WriteLine(seconds);
-            Thread.Sleep(seconds * 100);
+            Console.Write(seconds);
+            Thread.Sleep(seconds * 1000);
+            Console.Write("\b \b");
             seconds--;
         } while (seconds > 0);
-    }
-    public Activity(DateTime date)
-    {
-        this.date = date;// thisone stores the date from the loaded file
+        Console.WriteLine("");
     }
 
-    public void Write(string prompt, string response)//stores the prompt and response of the input
-    {
-        this.prompt = prompt;
-        this.response = response;
 
-
-    }
-    public string Read()
-    {
-        return date + "\n" + prompt + "\n" + response;
-
-    }
-
-    public override string ToString()
-    {
-        return date + "~~" + prompt + "~~" + response;// creates string foer saving and loading  with the IO
-    }
 
 
 
