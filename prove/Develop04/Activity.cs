@@ -21,10 +21,12 @@ public class Activity
 
     public void DisplayEndingMessage()
     {
-        Console.WriteLine($"You have completed another {_duration} seconds of the {_name}. ");// we injected the duration and the name of the activity into the comentS
+        Console.WriteLine("Well done!!");
+        Console.WriteLine("");
+        Console.WriteLine($"You have completed another {_duration} seconds of the {_name} Activity. ");// I injected the duration and the name of the activity into the comentS
     }
 
-    public void ShowSpinner(int seconds)//prep work for now  we are showing the time in milliseconds
+    public void ShowSpinner(int seconds)//This shows the spiner and  the time in milliseconds
     {
         List<string> animationTimerStrings = new List<string>(); //This a 8 seconds animation timer
         animationTimerStrings.Add("|");
@@ -52,7 +54,7 @@ public class Activity
         } while (i <= seconds);
     }
 
-    public void ShowCountDown(int seconds)//prep work we are decremanting the seconds and printing each number on the scring
+    public void ShowCountDown(int seconds)//This is decremanting the seconds and printing each number on the scring
     {
 
 
@@ -65,9 +67,6 @@ public class Activity
         } while (seconds > 0);
         Console.WriteLine("");
     }
-
-
-
 
 
 }
