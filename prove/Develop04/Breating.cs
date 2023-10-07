@@ -16,6 +16,7 @@ class BreathingActivity : Activity
     public void Run()
     {
         DisplayStartingMessage();
+        Console.WriteLine("");
         ShowSpinner(5);
 
         int i = 0;
@@ -23,10 +24,14 @@ class BreathingActivity : Activity
         {
             Console.Write("Breathe in... ");
             ShowCountDown(2);
+            Console.WriteLine("");
+            ShowCountDown(3);
             Console.Write("Now breathe out... ");
+            Console.WriteLine("");
             ShowCountDown(3);
             Console.Write("Breathe in... ");
             ShowCountDown(4);
+            Console.WriteLine("");
             Console.Write("Now breathe out... ");
             ShowCountDown(5);
             i += 5;

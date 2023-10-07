@@ -51,6 +51,11 @@ class Program
                     Console.WriteLine("");
                     Console.WriteLine("How long, in seconds, would you like for your session? ");
                     input = Console.ReadLine();
+                    Console.WriteLine("Consider The following prompt: ");
+                    Console.WriteLine("");
+                    Console.WriteLine("  ---Think of a time when you did something really difficult. --- ");
+                    Console.WriteLine("When you have something in mind, press enter to continue. ");
+                    Console.WriteLine("");
                     reflectingactivity._duration = Convert.ToInt32(input);//taking string and converting numbers int
                     reflectingactivity.Run();
                     break;
@@ -62,6 +67,7 @@ class Program
                     Console.WriteLine("");
                     Console.WriteLine("How long, in seconds, would you like for your session? ");
                     input = Console.ReadLine();
+                    Console.WriteLine("List as many responses you can to the followig prompt: ");
                     listingActivity._duration = Convert.ToInt32(input);//taking string and converting numbers int
                     listingActivity.Run();
                     break;

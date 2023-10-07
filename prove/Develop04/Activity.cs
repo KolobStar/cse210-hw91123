@@ -4,7 +4,7 @@ using System;
 using System.Security.Cryptography.X509Certificates;
 
 public class Activity
-{
+{ 
     public string _name;
     public string _description;
     public int _duration;
@@ -14,6 +14,7 @@ public class Activity
 
     }
 
+   
     public void DisplayStartingMessage()
     {
         Console.WriteLine("Get Ready...");
@@ -23,7 +24,7 @@ public class Activity
     {
         Console.WriteLine("Well done!!");
         Console.WriteLine("");
-        Console.WriteLine($"You have completed another {_duration} seconds of the {_name} Activity. ");// I injected the duration and the name of the activity into the comentS
+        Console.WriteLine($"You have completed another {_duration} seconds of the {_name}. ");// I injected the duration and the name of the activity into the comentS
     }
 
     public void ShowSpinner(int seconds)//This shows the spiner and  the time in milliseconds
