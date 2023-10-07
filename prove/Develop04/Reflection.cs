@@ -2,8 +2,8 @@ using System;
 
 public class ReflectingActivity : Activity
 {
-    public List<string> _prompts {get;set;}= new List<string>();
-    public List<string> _questions {get;set;}= new List<string>();
+    public List<string> _prompts { get; set; } = new List<string>();
+    public List<string> _questions { get; set; } = new List<string>();
 
     public ReflectingActivity()
     {
@@ -27,8 +27,22 @@ public class ReflectingActivity : Activity
 
     public void Run()
     {
-        Console.WriteLine(GetRandomPromt());
+        DisplayStartingMessage();
+        ShowSpinner(5);
+        int i = 0;
+        do
+        {
+
+
+            DisplayPrompt();
+            DisplayQuestions();
+            ShowSpinner(5);
+            i += 5;
+        } while (i <= _duration);
+        DisplayEndingMessage();
+
     }
+
 
     public string GetRandomPromt()
     {
@@ -41,17 +55,19 @@ public class ReflectingActivity : Activity
     {
 
 
-        return null;
+        Random rand = new Random();
+        int i = rand.Next(_questions.Count() - 1);//it gives us a random number from 0 to the max index of _prompts
+        return _questions[i];
     }
 
     public void DisplayPrompt()
     {
-
+        Console.WriteLine(GetRandomPromt());
     }
 
     public void DisplayQuestions()
     {
-
+        Console.WriteLine(GetRandomQuestion());
     }
 
 

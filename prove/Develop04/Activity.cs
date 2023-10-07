@@ -61,10 +61,10 @@ public class Activity
         do
         {
             Console.Write(seconds);
-            Thread.Sleep(seconds * 1000);
+            Thread.Sleep(1000);
             Console.Write("\b \b");
-            seconds--;
-        } while (seconds > 0);
+            seconds=seconds-1;
+        } while (seconds >= 0);
         Console.WriteLine("");
     }
 
