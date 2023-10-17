@@ -17,7 +17,7 @@ public class Goal: GoalManager
 
     }
 
-    public void RecordEvent()
+    public new void RecordEvent()
     {
 
     }

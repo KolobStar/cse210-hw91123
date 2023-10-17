@@ -13,7 +13,7 @@ public class SimpleGoal : GoalManager
         name = "Simple Goal";
         description = "This Goal Will Help you to get points depending in what  simple goal you do";
     }
-    public void RecordEvent()
+    public new void RecordEvent()
     {
 
     }

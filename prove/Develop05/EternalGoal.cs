@@ -12,7 +12,7 @@ public class EternalGoal : GoalManager
         description = "This goal will help you to get 100 points every time you complete a goal. ";
     }
 
-    public void RecordEvent()
+    public new void RecordEvent()
     {
 
     }

@@ -1,4 +1,6 @@
 using System;
+using System.IO;
+using System.Text;
 
 public class GoalManager
 {
@@ -44,7 +46,20 @@ public class GoalManager
     }
     public void SaveGoals()
     {
-
+        Console.WriteLine("What is the filename for the goal file? ");
+        string input = Console.ReadLine();
+        string path = @"c:\temp\" + input; 
+        try{
+        // Create the file, or overwrite if the file exists.
+        using (StreamWriter fs = File.AppendText(input))
+        {
+            string goal = "This is my goal";
+            // Add some information to the file.
+            fs.Write(goal);
+        }
+        } catch(Exception ex){
+            Console.WriteLine(ex.Message);
+        }
     }
     public void LoadGoal()
     {
