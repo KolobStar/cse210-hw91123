@@ -2,6 +2,9 @@ using System;
 
 public class GoalManager
 {
+    public string name;
+    public string description;
+    public int points;
     public List<string> _goals { get; set; } = new List<string>();
 
     public int _score;

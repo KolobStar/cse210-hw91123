@@ -1,6 +1,6 @@
 using System;
 
-public class Goal
+public class Goal: GoalManager
 {
     public string _shortName;
     public string _description;
@@ -24,17 +24,17 @@ public class Goal
 
     public bool IsComplete()
     {
-        
+        return true;
     }
 
     public string GetDetailsString()
     {
-
+        return string.Empty;
     }
 
     public string GetStringRepresentation()
     {
-        
+        return string.Empty;
     }
 
 
