@@ -46,7 +46,7 @@ class Program
         com7._text = "That method is not the rigth one";
         Comment com8 = new Comment();
         com8._username = "Bodyshop59";
-        com8._text = "That looks easier than I thouth";
+        com8._text = "That looks easier than I though";
         Comment com9 = new Comment();
         com9._username = "babyface";
         com9._text = "Where did you got those tools?";
